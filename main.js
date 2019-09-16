@@ -1,6 +1,6 @@
 'use strict';
 fetch('https://api.github.com/users?per_page=50').then(
-  response=>response.json
+  response=>response.json()
 ).then(
   console.log
 ).catch(
