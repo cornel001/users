@@ -6,5 +6,5 @@ xhr.onload = function() {
 xhr.onerror = function() {
   console.log(this.status + ' - ' + this.statusText)
 };
-xhr.open('GET', '/users');
+xhr.open('GET', 'https://api.github.com/users');
 xhr.send();
