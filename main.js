@@ -1,8 +1,10 @@
 'use strict';
-fetch('https://api.github.com/users?per_page=50').then(
+const mainUrl = 'https://api.github.com/users';
+
+fetch(mainUrl+'?per_page=50').then(
   response=>response.json()
 ).then(
-  users=>users.map(user=>user.login)
+  users=>users.map(user=>mainUrl+'/'+user.login)
 ).then(
   console.log
 ).catch(
