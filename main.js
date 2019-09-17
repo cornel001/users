@@ -4,9 +4,11 @@ const mainUrl = `https://api.github.com/users`;
 fetch(`${mainUrl}?per_page=50`).then(
   response=>response.json()
 ).then(
-  users=>users.map(user=>fetch(`${mainUrl}/${user.login}`))
+  users=>users.map(user=>fetch(`${mainUrl}/${user.login}`).then(
+    response=>response.json()  
+  ))
 ).then(
-  Promise.all
+  promises=>Promise.all(promises)
 ).then(
   console.log
 ).catch(
