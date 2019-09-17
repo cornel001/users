@@ -2,7 +2,10 @@
 fetch('https://api.github.com/users?per_page=50').then(
   response=>response.json()
 ).then(
-  console.log
+  users=>{
+    let logins = users.map(user=>users.login);
+    console.log(logins);
+  }
 ).catch(
   console.log
 )
